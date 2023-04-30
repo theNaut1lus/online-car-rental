@@ -3,7 +3,9 @@
 <div class="container-fluid pb-3">
     <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
         <div class="bg-body-tertiary border rounded-3">
-            <br><br><br><br><br><br><br><br><br><br>
+            <div id="preview">
+
+            </div>
         </div>
         <div class="bg-body-tertiary border rounded-3">
             <div class="container">
