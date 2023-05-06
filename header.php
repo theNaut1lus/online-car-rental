@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="py-3 mb-3 border-bottom">
+    <header class="py-3 mb-3 border-bottom shadow">
         <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
             <div class="dropdown">
                 <a href="#"
@@ -46,13 +46,13 @@
                         <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small shadow">
-                        <li><a class="dropdown-item" href="#">Shopping Cart</a></li>
+                        <li><a class="dropdown-item" href="cart.php">Shopping Cart</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="checkout.php">Checkout</a></li>
                     </ul>
                 </div>
             </div>
