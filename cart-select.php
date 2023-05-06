@@ -28,11 +28,14 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-$jsonString = json_encode($output_array);
+$json_array = json_encode($output_array, JSON_PRETTY_PRINT);
+$path = "json-data/cart.json";
 
-$path = "json-data/cars.json";
-$fp = fopen($path, 'w');
-fwrite($fp, $jsonString);
-fclose($fp);
+if (file_exists($path)) {
+    file_put_contents($path, $json_array) or die("Unable to write file!");
+} else {
+    echo "File does not exist";
+}
+
 $conn->close();
 ?>

@@ -31,16 +31,12 @@ if ($result->num_rows > 0) {
 $conn->close();
 $json_array = json_encode($output_array, JSON_PRETTY_PRINT);
 $path = "json-data/cars.json";
-$fp = fopen($path, 'w+');
-echo $fp;
 
-try {
-    fwrite($fp, $json_array);
-} catch (\Throwable $th) {
-    echo $th;
+if (file_exists($path)) {
+    file_put_contents($path, $json_array) or die("Unable to write file!");
+} else {
+    echo "File does not exist";
 }
 
 print_r($json_array);
-
-fclose($fp);
 ?>
