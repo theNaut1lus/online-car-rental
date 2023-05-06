@@ -14,6 +14,26 @@ function dumpToJson(data) {
   console.log(blob);
 }
 
+function update_cart(id) {
+  id_fetch = "I_" + id;
+  value = document.getElementById(id_fetch).value;
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    location.reload();
+  };
+  xmlhttp.open("GET", "update-cart.php?query=" + id + "&value=" + value);
+  xmlhttp.send();
+}
+
+function delete_cart(id) {
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    location.reload();
+  };
+  xmlhttp.open("GET", "delete-cart.php?query=" + id);
+  xmlhttp.send();
+}
+
 function fetchCarData(str) {
   // str.preventDefault();
   const xmlhttp = new XMLHttpRequest();

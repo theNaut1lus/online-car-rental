@@ -29,5 +29,18 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-print_r(json_encode($output_array));
+$json_array = json_encode($output_array, JSON_PRETTY_PRINT);
+$path = "json-data/cars.json";
+$fp = fopen($path, 'w+');
+echo $fp;
+
+try {
+    fwrite($fp, $json_array);
+} catch (\Throwable $th) {
+    echo $th;
+}
+
+print_r($json_array);
+
+fclose($fp);
 ?>
