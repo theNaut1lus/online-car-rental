@@ -1,5 +1,3 @@
-<?php include 'cart-select.php' ?>
-
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
@@ -14,18 +12,7 @@
                     <th scope="col">Total Charges</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                foreach ($output_array as $key => $value) {
-                    echo '<tr id="' . $value["ID"] . '">';
-                    echo "<td>" . $value['car_details'] . "</td>";
-                    echo "<td><input id='I_" . $value["ID"] . "' type='number' value=\"" . $value['days'] . "\"</></td>";
-                    echo "<td>" . $value['charges'] . "</td>";
-                    echo '<td><button type="button" class="btn btn-primary" onclick="update-cart(' . $value["ID"] . ')">Update</button></td>';
-                    echo '<td><button type="button" class="btn btn-secondary" onclick="delete-cart(' . $value["ID"] . ')">Delete</button></td>';
-                    echo "</tr>";
-                }
-                ?>
+            <tbody id="cart-data">
             </tbody>
         </table>
     </div>

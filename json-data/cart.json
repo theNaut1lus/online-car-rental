@@ -7,24 +7,10 @@
         "charges": "120"
     },
     {
-        "ID": "15",
-        "car_details": "Chevrolet Impala 2020",
-        "days": "1",
-        "price_per_day": "60",
-        "charges": "60"
-    },
-    {
         "ID": "16",
         "car_details": "Ford Explorer 2019",
-        "days": "5",
+        "days": "12",
         "price_per_day": "80",
-        "charges": "400"
-    },
-    {
-        "ID": "20",
-        "car_details": "Dodge Grand Caravan 2017",
-        "days": "3",
-        "price_per_day": "70",
-        "charges": "210"
+        "charges": "960"
     }
 ]

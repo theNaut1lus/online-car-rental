@@ -4,6 +4,10 @@ $username = "uts";
 $password = "";
 $dbname = "assignment2";
 
+$query = $_GET['query'];
+// echo $query;
+isset($query) ? $query : $query = 'all';
+
 $total = 0;
 
 $output_array = array();
@@ -38,4 +42,6 @@ if (file_exists($path)) {
 }
 
 $conn->close();
+
+print_r($json_array);
 ?>

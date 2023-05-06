@@ -8,37 +8,37 @@ function fetchData(str) {
   xmlhttp.send();
 }
 
-function dumpToJson(data) {
-  let json = JSON.stringify(data);
-  let blob = new Blob([json], { type: "application/json" });
-  console.log(blob);
-}
-
 function update_cart(id) {
   id_fetch = "I_" + id;
   value = document.getElementById(id_fetch).value;
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
-    location.reload();
+    console.log(this.responseText);
+    fetchCartData("all");
   };
   xmlhttp.open("GET", "update-cart.php?query=" + id + "&value=" + value);
   xmlhttp.send();
+  console.log(id_fetch,value);
 }
 
 function delete_cart(id) {
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
-    location.reload();
+    console.log(this.responseText);
+    fetchCartData("all");
   };
   xmlhttp.open("GET", "delete-cart.php?query=" + id);
   xmlhttp.send();
+  console.log(id);
 }
 
 function fetchCarData(str) {
+  console.log("fetching car data");
   // str.preventDefault();
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
     const fetchedArray = JSON.parse(this.responseText);
+    document.getElementById("main-data").innerHTML = "";
     fetchedArray.forEach((element) => {
       dumpToJson(element);
       let inject = `<div class="col">
@@ -67,6 +67,31 @@ function fetchCarData(str) {
 }
 
 fetchCarData("all");
+
+function fetchCartData(str) {
+  console.log("fetching cart data");
+  // str.preventDefault();
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    const fetchedArray = JSON.parse(this.responseText);
+    document.getElementById("cart-data").innerHTML = "";
+    fetchedArray.forEach((element) => {
+      let inject = `<tr id="` + element["ID"] + `">
+                      <td>` + element['car_details'] + `</td>
+                      <td><input id='I_` + element["ID"] + `' type='number' value=\"` + element['days'] + `\" /></td>
+                      <td>` + element['charges'] + `</td>
+                      <td><button type="button" class="btn btn-primary" onclick="update_cart(` + element["ID"] + `)">Update</button></td>
+                      <td><button type="button" class="btn btn-secondary" onclick="delete_cart(` + element["ID"] + `)">Delete</button></td>
+                    </tr>`;
+      document.getElementById("cart-data").innerHTML += inject;
+    });
+    // let data_array = JSON.parse(this.responseText);
+  };
+  xmlhttp.open("GET", "cart-select.php?query=" + str);
+  xmlhttp.send();
+}
+
+fetchCartData("all");
 
 (function () {
   'use strict'
