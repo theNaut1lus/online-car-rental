@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
-        <h4 class="display-4">Shopping Cart</h4>
+        <h4 class="display-4 page-headings">Shopping Cart</h4>
     </div>
     <div class="row">
         <table class="table table-striped">
