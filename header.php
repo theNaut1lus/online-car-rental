@@ -48,7 +48,7 @@
             <div class="d-flex align-items-center">
                 <form action="index.php" class="w-100 me-3" role="search">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search"
-                        onformchange="fetchCarData('all')">
+                        onformchange="fetchCarData(this.value); return false;">
                 </form>
 
                 <div class="flex-shrink-0 dropdown">
