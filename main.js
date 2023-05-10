@@ -25,11 +25,11 @@ function fetchCarData(str) {
                             <div class="card-body">
                                 <p class="card-text">` + element["brand"] + ` <b>` + element["model"] + `</b> ` + element["year"] +`</p>
                                 <p class="card-text fs-7"><b>$` + element["price_per_day"] + `</b> Per Day</p>
-                                  
+                                <small hidden>`+ element["id"] +`</small>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="add_cart(`+ element["id"] +`)">Add to Cart</button>
                                     </div>
                                     <small class="text-body-secondary small-texts">1 day delivery</small>
                                 </div>
@@ -65,7 +65,7 @@ function searchCarData(str) {
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="add_cart(`+ element["id"] +`)">Add to Cart</button>
                                     </div>
                                     <small class="text-body-secondary small-texts">1 day delivery</small>
                                 </div>
@@ -133,6 +133,7 @@ function delete_cart(id) {
 }
 
 function add_cart(id) {
+  console.log("adding to cart " + id);
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
     console.log(this.responseText);

@@ -2,9 +2,23 @@
     {
         "ID": "12",
         "car_details": "Toyota Yaris 2020",
-        "days": "6",
+        "days": "7",
         "price_per_day": "30",
-        "charges": "180"
+        "charges": "210"
+    },
+    {
+        "ID": "13",
+        "car_details": "Honda Civic 2019",
+        "days": "2",
+        "price_per_day": "40",
+        "charges": "80"
+    },
+    {
+        "ID": "15",
+        "car_details": "Chevrolet Impala 2020",
+        "days": "1",
+        "price_per_day": "60",
+        "charges": "60"
     },
     {
         "ID": "16",
@@ -12,5 +26,12 @@
         "days": "12",
         "price_per_day": "80",
         "charges": "960"
+    },
+    {
+        "ID": "18",
+        "car_details": "Porsche 911 2022",
+        "days": "2",
+        "price_per_day": "300",
+        "charges": "600"
     }
 ]
