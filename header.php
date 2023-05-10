@@ -65,6 +65,10 @@
                         </li>
                         <li><a class="dropdown-item" href="checkout.php">Checkout</a></li>
                     </ul>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
                 </div>
             </div>
         </div>

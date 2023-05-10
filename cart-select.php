@@ -9,6 +9,7 @@ $query = $_GET['query'];
 isset($query) ? $query : $query = 'all';
 
 $total = 0;
+$count = 0;
 
 $output_array = array();
 
@@ -20,13 +21,14 @@ if ($conn->connect_error) {
 }
 
 // $sql = "SELECT * FROM `cart` JOIN `cars` where cart.ID = cars.id ";
-$sql = "SELECT cart.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, cart.days, cars.price_per_day, (cart.days*cars.price_per_day) as charges FROM `cart` JOIN `cars` where cart.ID = cars.id;";
+$sql = "SELECT cart.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, cart.days as days, cars.price_per_day, (cart.days*cars.price_per_day) as charges FROM `cart` JOIN `cars` where cart.ID = cars.id;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         $total += $row["charges"];
+        $count += $row["days"];
         $output_array[] = $row;
     }
 } else {
@@ -43,8 +45,9 @@ if (file_exists($path)) {
 
 $conn->close();
 
-if (isset($_GET['query'])) {
+if (isset($_GET['query']) and $_GET['query'] == 'count') {
+    print_r($count);
+} else if (isset($_GET['query'])) {
     print_r($json_array);
-} else {
 }
 ?>

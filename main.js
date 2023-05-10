@@ -104,9 +104,26 @@ function fetchCartData(str) {
   };
   xmlhttp.open("GET", "cart-select.php?query=" + str);
   xmlhttp.send();
+  fetchCartCount("count");
 }
 
 fetchCartData("all");
+
+function fetchCartCount(str) {
+  console.log("fetching cart count");
+  let count = 0;
+  // str.preventDefault();
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    //if we pass the query as count, php will just return the count of the rows, no need to parse it to json
+    count = this.responseText;
+    console.log(count);
+    document.getElementById("cart-count").innerHTML = count;
+    document.getElementById("cart-count1").innerHTML = count;
+  };
+  xmlhttp.open("GET", "cart-select.php?query=" + str);
+  xmlhttp.send();
+}
 
 function update_cart(id) {
   id_fetch = "I_" + id;

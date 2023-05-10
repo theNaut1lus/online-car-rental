@@ -1,37 +1,58 @@
 [
     {
+        "ID": "1",
+        "car_details": "Toyota Camry 2013",
+        "days": "1",
+        "price_per_day": "120",
+        "charges": "120"
+    },
+    {
         "ID": "12",
         "car_details": "Toyota Yaris 2020",
-        "days": "7",
+        "days": "12",
         "price_per_day": "30",
-        "charges": "210"
+        "charges": "360"
     },
     {
         "ID": "13",
         "car_details": "Honda Civic 2019",
-        "days": "2",
+        "days": "5",
         "price_per_day": "40",
-        "charges": "80"
+        "charges": "200"
+    },
+    {
+        "ID": "14",
+        "car_details": "Nissan Altima 2018",
+        "days": "1",
+        "price_per_day": "50",
+        "charges": "50"
     },
     {
         "ID": "15",
         "car_details": "Chevrolet Impala 2020",
-        "days": "1",
+        "days": "4",
         "price_per_day": "60",
-        "charges": "60"
+        "charges": "240"
     },
     {
         "ID": "16",
         "car_details": "Ford Explorer 2019",
-        "days": "12",
+        "days": "7",
         "price_per_day": "80",
-        "charges": "960"
+        "charges": "560"
+    },
+    {
+        "ID": "17",
+        "car_details": "Mercedes-Benz S-Class 2021",
+        "days": "1",
+        "price_per_day": "200",
+        "charges": "200"
     },
     {
         "ID": "18",
         "car_details": "Porsche 911 2022",
-        "days": "2",
+        "days": "7",
         "price_per_day": "300",
-        "charges": "600"
+        "charges": "2100"
     }
 ]
