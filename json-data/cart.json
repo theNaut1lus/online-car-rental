@@ -2,9 +2,9 @@
     {
         "ID": "12",
         "car_details": "Toyota Yaris 2020",
-        "days": "4",
+        "days": "6",
         "price_per_day": "30",
-        "charges": "120"
+        "charges": "180"
     },
     {
         "ID": "16",

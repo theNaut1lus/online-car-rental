@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
-        <h4 class="display-4 page-headings">Shopping Cart</h4>
+        <h4 class="display-4 page-headings">Current Bookings</h4>
     </div>
     <div class="row">
         <table class="table table-striped">
@@ -12,16 +12,16 @@
                     <th scope="col">Total Charges</th>
                 </tr>
             </thead>
-            <tbody id="cart-data">
+            <tbody id="booking-data">
             </tbody>
         </table>
     </div>
     <div class="row">
         <div class="col">
-            <a href="checkout.php" type="button" class="btn btn-success">Checkout</a>
+            <a href="index.php" type="button" class="btn btn-success">Another booking</a>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-danger">Empty Cart</button>
+            <button type="button" class="btn btn-danger">Cancel all Bookings</button>
         </div>
     </div>
 </div>

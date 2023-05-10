@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 }
 
 // $sql = "SELECT * FROM `cart` JOIN `cars` where cart.ID = cars.id ";
-$sql = "SELECT cart.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, cart.days, cars.price_per_day, (cart.days*cars.price_per_day) as charges FROM `cart` JOIN `cars` where cart.ID = cars.id;";
+$sql = "SELECT booking.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, booking.days, cars.price_per_day, (booking.days*cars.price_per_day) as charges FROM `booking` JOIN `cars` where booking.ID = cars.id;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $json_array = json_encode($output_array, JSON_PRETTY_PRINT);
-$path = "json-data/cart.json";
+$path = "json-data/booking.json";
 
 if (file_exists($path)) {
     file_put_contents($path, $json_array) or die("Unable to write file!");
@@ -43,8 +43,5 @@ if (file_exists($path)) {
 
 $conn->close();
 
-if (isset($_GET['query'])) {
-    print_r($json_array);
-} else {
-}
+print_r($json_array);
 ?>

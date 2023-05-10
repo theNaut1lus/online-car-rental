@@ -6,7 +6,7 @@
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Company, Inc</span>
+            <span class="mb-3 mb-md-0 text-body-secondary">©2023 Sid Aulakh, Inc</span>
         </div>
         <div>
             <a target="_blank" href="https://icons8.com/icon/1nIaseysseE5/hover-car">Hover Car</a> icon by <a
