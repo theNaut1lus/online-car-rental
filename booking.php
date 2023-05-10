@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <div class="container">
     <div class="row">
-        <h4 class="display-4">Current Bookings</h4>
+        <h4 class="display-4 page-headings">Current Bookings</h4>
     </div>
     <div class="row">
         <table class="table table-striped">

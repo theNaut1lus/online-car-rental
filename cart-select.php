@@ -43,5 +43,8 @@ if (file_exists($path)) {
 
 $conn->close();
 
-print_r($json_array);
+if (isset($_GET['query'])) {
+    print_r($json_array);
+} else {
+}
 ?>

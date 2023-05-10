@@ -22,7 +22,7 @@ function fetchCarData(str) {
                             <img src="images/cars/` + element["img_index"] + `" class="card-img-top" alt="..." height="300">
                             <div class="card-body">
                                 <p class="card-text">` + element["brand"] + ` <b>` + element["model"] + `</b> ` + element["year"] +`</p>
-                                <p class="card-text">$` + element["price_per_day"] + ` Per Day</p>
+                                <p class="card-text fs-7"><b>$` + element["price_per_day"] + `</b> Per Day</p>
                                   
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
