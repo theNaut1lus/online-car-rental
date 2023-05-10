@@ -29,7 +29,7 @@ function fetchCarData(str) {
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                         <button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button>
                                     </div>
-                                    <small class="text-body-secondary">9 mins</small>
+                                    <small class="text-body-secondary small-texts">1 day delivery</small>
                                 </div>
                             </div>
                         </div>

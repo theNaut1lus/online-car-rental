@@ -3,15 +3,18 @@ body {
 }
 
 .logo-text {
-    /* font-family: 'Kanit', sans-serif; */
     font-weight: 900;
     font-style: italic;
     /* font-size: 2rem; */
 }
 
 .page-headings {
-    font-family: 'Kanit', sans-serif;
     font-weight: 600;
     font-style: oblique;
     font-size: 2rem;
+}
+
+.small-texts {
+    font-weight: 200;
+    font-style: oblique;
 }
