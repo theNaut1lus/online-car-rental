@@ -216,17 +216,6 @@ function delete_booking(id) {
   console.log(id);
 }
 
-function make_booking() {
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.onload = function () {
-    console.log(this.responseText);
-    fetchBookingData("all");
-  };
-  xmlhttp.open("GET", "make-booking.php");
-  xmlhttp.send();
-  console.log("making booking");
-}
-
 (function () {
   "use strict";
 

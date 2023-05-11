@@ -21,4 +21,15 @@ $ccCVV = $_POST['cc-cvv'];
 
 $date = date("l jS \of F Y h:i:s A");
 
+// echo $date;
+// echo "test";
+// echo $username;
+// echo $firstName, $lastName, $username, $address, $address2, $country, $state, $zip, $paymentMethod, $ccName, $ccNumber, $ccExpiration, $ccCVV;
+
+echo "Booking Processed, returning to home";
+
+// sleep(10);
+header("Location: index.php");
+exit();
+
 ?>
