@@ -1,16 +1,44 @@
 [
     {
-        "id": "13",
-        "category": "Compact",
+        "id": "12",
+        "category": "Economy",
         "availability": "1",
-        "brand": "Honda",
-        "model": "Civic",
-        "year": "2019",
-        "mileage": "12000",
+        "brand": "Toyota",
+        "model": "Yaris",
+        "year": "2020",
+        "mileage": "5000",
         "fuel_type": "Gasoline",
         "seats": "5",
-        "price_per_day": "40",
-        "description": "Sporty and reliable",
-        "img_index": "civic.png"
+        "price_per_day": "30",
+        "description": "Compact and fuel-efficient",
+        "img_index": "yaris.jpg"
+    },
+    {
+        "id": "15",
+        "category": "Full-size",
+        "availability": "1",
+        "brand": "Chevrolet",
+        "model": "Impala",
+        "year": "2020",
+        "mileage": "8000",
+        "fuel_type": "Gasoline",
+        "seats": "6",
+        "price_per_day": "60",
+        "description": "Luxurious and powerful",
+        "img_index": "impala.png"
+    },
+    {
+        "id": "21",
+        "category": "Truck",
+        "availability": "0",
+        "brand": "Toyota",
+        "model": "Tacoma",
+        "year": "2020",
+        "mileage": "10000",
+        "fuel_type": "Gasoline",
+        "seats": "5",
+        "price_per_day": "90",
+        "description": "Rugged and dependable",
+        "img_index": "tacoma.png"
     }
 ]

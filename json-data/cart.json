@@ -1,10 +1,17 @@
 [
     {
+        "ID": "1",
+        "car_details": "Toyota Camry 2013",
+        "days": "1",
+        "price_per_day": "110",
+        "charges": "110"
+    },
+    {
         "ID": "12",
         "car_details": "Toyota Yaris 2020",
-        "days": "12",
+        "days": "13",
         "price_per_day": "30",
-        "charges": "360"
+        "charges": "390"
     },
     {
         "ID": "13",
