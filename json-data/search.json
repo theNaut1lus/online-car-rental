@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": "13",
+        "category": "Compact",
+        "availability": "1",
+        "brand": "Honda",
+        "model": "Civic",
+        "year": "2019",
+        "mileage": "12000",
+        "fuel_type": "Gasoline",
+        "seats": "5",
+        "price_per_day": "40",
+        "description": "Sporty and reliable",
+        "img_index": "civic.png"
+    }
+]

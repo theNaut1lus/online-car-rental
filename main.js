@@ -25,11 +25,11 @@ function fetchCarData(str) {
                             <div class="card-body">
                                 <p class="card-text">` + element["brand"] + ` <b>` + element["model"] + `</b> ` + element["year"] +`</p>
                                 <p class="card-text fs-7"><b>$` + element["price_per_day"] + `</b> Per Day</p>
-                                  
+                                <small hidden>`+ element["id"] +`</small>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="add_cart(`+ element["id"] +`)">Add to Cart</button>
                                     </div>
                                     <small class="text-body-secondary small-texts">1 day delivery</small>
                                 </div>
@@ -46,13 +46,16 @@ function fetchCarData(str) {
 
 fetchCarData("all");
 
+//will hit search-cars file and recieve filtered data, will call it in the end with the search page.
+
 function searchCarData(str) {
   console.log("searching car data");
   // str.preventDefault();
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
+    console.log(this.responseText);
     const fetchedArray = JSON.parse(this.responseText);
-    document.getElementById("main-data").innerHTML = "";
+    document.getElementById("search-data").innerHTML = "";
     fetchedArray.forEach((element) => {
       // prettier-ignore
       let inject = `<div class="col"> 
@@ -65,14 +68,14 @@ function searchCarData(str) {
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="add_cart(`+ element["id"] +`)">Add to Cart</button>
                                     </div>
                                     <small class="text-body-secondary small-texts">1 day delivery</small>
                                 </div>
                             </div>
                         </div>
                     </div>`;
-      document.getElementById("main-data").innerHTML += inject;
+      document.getElementById("search-data").innerHTML += inject;
     });
     // let data_array = JSON.parse(this.responseText);
   };
@@ -93,7 +96,7 @@ function fetchCartData(str) {
       // prettier-ignore
       let inject = `<tr id="` + element["ID"] + `">
                       <td>` + element['car_details'] + `</td>
-                      <td><input id='I_` + element["ID"] + `' type='number' value=\"` + element['days'] + `\" /></td>
+                      <td><input id='I_` + element["ID"] + `' type='number' value=\"` + element['days'] + `\" min="1" max="20"/></td>
                       <td>` + element['charges'] + `</td>
                       <td><button type="button" class="btn btn-primary" onclick="update_cart(` + element["ID"] + `)">Update</button></td>
                       <td><button type="button" class="btn btn-secondary" onclick="delete_cart(` + element["ID"] + `)">Delete</button></td>
@@ -104,9 +107,26 @@ function fetchCartData(str) {
   };
   xmlhttp.open("GET", "cart-select.php?query=" + str);
   xmlhttp.send();
+  fetchCartCount("count");
 }
 
 fetchCartData("all");
+
+function fetchCartCount(str) {
+  console.log("fetching cart count");
+  let count = 0;
+  // str.preventDefault();
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    //if we pass the query as count, php will just return the count of the rows, no need to parse it to json
+    count = this.responseText;
+    console.log(count);
+    document.getElementById("cart-count").innerHTML = count;
+    document.getElementById("cart-count1").innerHTML = count;
+  };
+  xmlhttp.open("GET", "cart-select.php?query=" + str);
+  xmlhttp.send();
+}
 
 function update_cart(id) {
   id_fetch = "I_" + id;
@@ -133,6 +153,7 @@ function delete_cart(id) {
 }
 
 function add_cart(id) {
+  console.log("adding to cart " + id);
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
     console.log(this.responseText);
@@ -142,6 +163,8 @@ function add_cart(id) {
   xmlhttp.send();
   console.log(id);
 }
+
+//fetch, update and delete booking data: same as cart, also on checkout, delete all cart data and add it to booking data.
 
 function fetchBookingData(str) {
   console.log("fetching booking data");

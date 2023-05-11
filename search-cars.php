@@ -7,7 +7,7 @@ $dbname = "assignment2";
 $output_array = array();
 
 $query = $_GET['query'];
-echo $query;
+// echo $query;
 isset($query) ? $query : $query = 'all';
 
 // Create connection

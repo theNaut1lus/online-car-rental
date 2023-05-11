@@ -32,29 +32,22 @@
                     <img src="images/logo.gif" alt="mdo" class="rounded-circle" height="48" width="48">
                     <span class="fs-3 logo-text"> Hertz-UTS</span>
                 </a>
-                <ul class="dropdown-menu text-small shadow">
-                    <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-                    <li><a class="dropdown-item" href="#">Inventory</a></li>
-                    <li><a class="dropdown-item" href="#">Customers</a></li>
-                    <li><a class="dropdown-item" href="#">Products</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Reports</a></li>
-                    <li><a class="dropdown-item" href="#">Analytics</a></li>
-                </ul>
             </div>
 
             <div class="d-flex align-items-center">
-                <form action="index.php" class="w-100 me-3" role="search">
-                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search"
-                        onformchange="fetchCarData(this.value); return false;">
+                <form action="search.php" class="w-100 me-3" role="search" method="GET">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="query">
                 </form>
 
                 <div class="flex-shrink-0 dropdown">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
                     </a>
                     <ul class="dropdown-menu text-small shadow">
                         <li><a class="dropdown-item" href="cart.php">Shopping Cart</a></li>
@@ -65,6 +58,10 @@
                         </li>
                         <li><a class="dropdown-item" href="checkout.php">Checkout</a></li>
                     </ul>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-count">
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
                 </div>
             </div>
         </div>
