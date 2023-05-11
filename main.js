@@ -46,13 +46,16 @@ function fetchCarData(str) {
 
 fetchCarData("all");
 
+//will hit search-cars file and recieve filtered data, will call it in the end with the search page.
+
 function searchCarData(str) {
   console.log("searching car data");
   // str.preventDefault();
   const xmlhttp = new XMLHttpRequest();
   xmlhttp.onload = function () {
+    console.log(this.responseText);
     const fetchedArray = JSON.parse(this.responseText);
-    document.getElementById("main-data").innerHTML = "";
+    document.getElementById("search-data").innerHTML = "";
     fetchedArray.forEach((element) => {
       // prettier-ignore
       let inject = `<div class="col"> 
@@ -72,7 +75,7 @@ function searchCarData(str) {
                             </div>
                         </div>
                     </div>`;
-      document.getElementById("main-data").innerHTML += inject;
+      document.getElementById("search-data").innerHTML += inject;
     });
     // let data_array = JSON.parse(this.responseText);
   };
@@ -93,7 +96,7 @@ function fetchCartData(str) {
       // prettier-ignore
       let inject = `<tr id="` + element["ID"] + `">
                       <td>` + element['car_details'] + `</td>
-                      <td><input id='I_` + element["ID"] + `' type='number' value=\"` + element['days'] + `\" /></td>
+                      <td><input id='I_` + element["ID"] + `' type='number' value=\"` + element['days'] + `\" min="1" max="20"/></td>
                       <td>` + element['charges'] + `</td>
                       <td><button type="button" class="btn btn-primary" onclick="update_cart(` + element["ID"] + `)">Update</button></td>
                       <td><button type="button" class="btn btn-secondary" onclick="delete_cart(` + element["ID"] + `)">Delete</button></td>
@@ -161,6 +164,8 @@ function add_cart(id) {
   console.log(id);
 }
 
+//fetch, update and delete booking data: same as cart, also on checkout, delete all cart data and add it to booking data.
+
 function fetchBookingData(str) {
   console.log("fetching booking data");
   // str.preventDefault();
@@ -209,6 +214,17 @@ function delete_booking(id) {
   xmlhttp.open("GET", "delete-booking.php?query=" + id);
   xmlhttp.send();
   console.log(id);
+}
+
+function make_booking() {
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onload = function () {
+    console.log(this.responseText);
+    fetchBookingData("all");
+  };
+  xmlhttp.open("GET", "make-booking.php");
+  xmlhttp.send();
+  console.log("making booking");
 }
 
 (function () {
