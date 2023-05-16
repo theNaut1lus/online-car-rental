@@ -1,7 +1,8 @@
 <?php
-$servername = "localhost";
+// $servername = "localhost"; //local
+$servername = "awseb-e-qbre3sbpj9-stack-awsebrdsdatabase-jfmsni6lqk9t.cet59kefgwkn.us-east-1.rds.amazonaws.com"; //aws
 $username = "uts";
-$password = "";
+$password = "Secret123";
 $dbname = "assignment2";
 
 $output_array = array();
