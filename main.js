@@ -112,6 +112,8 @@ function fetchCartData(str) {
 
 fetchCartData("all");
 
+//this cart count call needs to be separate although it hits the same file, because it needs to be called on each and every page load and not just when the cart-specific pages are loaded.
+
 function fetchCartCount(str) {
   console.log("fetching cart count");
   let count = 0;
@@ -164,7 +166,7 @@ function add_cart(id) {
   console.log(id);
 }
 
-//fetch, update and delete booking data: same as cart, also on checkout, delete all cart data and add it to booking data.
+//fetch, update and delete booking data: same as cart, <todo>: also on checkout, delete all cart data and add it to booking data.
 
 function fetchBookingData(str) {
   console.log("fetching booking data");
@@ -216,6 +218,7 @@ function delete_booking(id) {
   console.log(id);
 }
 
+//anonymous function to validate forms using bootstrap.
 (function () {
   "use strict";
 
