@@ -22,6 +22,8 @@ if ($conn->connect_error) {
 }
 
 // $sql = "SELECT * FROM `cart` JOIN `cars` where cart.ID = cars.id ";
+
+//join needed with the cars table to fetch the car details for each unique id belonging to a car, in the cart table.
 $sql = "SELECT cart.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, cart.days as days, cars.price_per_day, (cart.days*cars.price_per_day) as charges FROM `cart` JOIN `cars` where cart.ID = cars.id;";
 $result = $conn->query($sql);
 
@@ -46,6 +48,10 @@ if (file_exists($path)) {
 
 $conn->close();
 
+//this works in 3 modes, 
+//if we pass query as 'all' it prints all data as a json array for ajax calls
+//if we pass query as 'count' it prints the total number of rows as variable $count
+//if we dont pass anything and use a basic include, then it does no printing, just sets the output array for use in other PHP pages.
 if (isset($_GET['query']) and $_GET['query'] == 'count') {
     print_r($count);
 } else if (isset($_GET['query'])) {

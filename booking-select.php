@@ -21,6 +21,8 @@ if ($conn->connect_error) {
 }
 
 // $sql = "SELECT * FROM `cart` JOIN `cars` where cart.ID = cars.id ";
+
+//join needed with the cars table to fetch the car details for each unique id belonging to a car, in the booking table.
 $sql = "SELECT booking.ID, CONCAT(cars.brand,\" \",cars.model,\" \",CONVERT(cars.year,CHARACTER)) as car_details, booking.days, cars.price_per_day, (booking.days*cars.price_per_day) as charges FROM `booking` JOIN `cars` where booking.ID = cars.id;";
 $result = $conn->query($sql);
 
