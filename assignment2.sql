@@ -74,7 +74,7 @@ INSERT INTO `cars` (`id`, `category`, `availability`, `brand`, `model`, `year`, 
 (17, 'Luxury', 1, 'Mercedes-Benz', 'S-Class', 2021, 1000, 'Gasoline', 4, 200, 'Elegant and sophisticated', 'sclass.png'),
 (18, 'Sports', 1, 'Porsche', '911', 2022, 100, 'Gasoline', 2, 300, 'Fast and exhilarating', '911.png'),
 (19, 'Convertible', 1, 'BMW', '4 Series', 2021, 500, 'Gasoline', 4, 150, 'Stylish and open-air', '4series.png'),
-(20, 'Van', 1, 'Dodge', 'Grand Caravan', 2017, 25000, 'Gasoline', 7, 70, 'Spacious and versatile', 'caravan.jp2'),
+(20, 'Van', 1, 'Dodge', 'Grand Caravan', 2017, 25000, 'Gasoline', 7, 70, 'Spacious and versatile', 'caravan.jpeg'),
 (21, 'Truck', 0, 'Toyota', 'Tacoma', 2020, 10000, 'Gasoline', 5, 90, 'Rugged and dependable', 'tacoma.png');
 
 -- --------------------------------------------------------
